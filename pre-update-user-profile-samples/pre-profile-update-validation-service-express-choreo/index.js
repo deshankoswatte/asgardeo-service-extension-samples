@@ -10,7 +10,7 @@ app.use(express.json());
 
 // Root endpoint
 app.get('/', (req, res) => {
-    res.send('Hello from the home endpoint!');
+    return res.status(200).json({"status": "ok", "message": "Service is running."});
 });
 
 // Mock: valid department list (simulating a directory check)
@@ -84,7 +84,7 @@ app.post("/validate-user-profile-update", async (req, res) => {
     }
 
     // All validations passed
-    return res.status(200).json({ actionStatus: "SUCCESS" });
+    return res.status(200).json({actionStatus: "SUCCESS"});
 });
 
 // Start the server
